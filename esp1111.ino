@@ -1,7 +1,3 @@
-// Скетч из курса по разработке WEB-интерфейсов для IoT: https://www.youtube.com/playlist?list=PL51GEtMX3UW0pwLEN64Lopep9nKPPJL1h
-// Обзоры и уроки работы с Arduino и ESP8266 на http://iomoio.ru
-// Присоединяйтесь ВКонтакте: https://im_pub
-
 #include "IRremote.h"
 #include <ESP8266WiFi.h>                                                // Библиотека для создания Wi-Fi подключения (клиент или точка доступа)
 #include <ESP8266WebServer.h>                                           // Библиотека для управления устройством по HTTP (например из браузера)
