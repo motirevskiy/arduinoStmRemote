@@ -1,0 +1,222 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Пульт</title>
+		<style>
+			body {
+				background-color: black;
+				text-align: center;
+				height: 100%;
+				margin: 0;
+			}
+			input[type="button"] {
+				color: black;
+				padding: 1%;
+				border: 5px solid #c49980;
+				border-radius: 25%;
+				position: absolute;
+				margin-top: -30px;
+				height: 12%;
+				width: 25%;
+			}
+		</style>
+	</head>
+	<body>
+		<input style="font-size: 50; top: 62%; left: 37%; background-color: rgb(95, 97, 255);" type="button" value="Вверх" id="up">
+		<input style="font-size: 50;top: 75%; left: 37%; background-color: lightcoral;" type="button" value="Ок" id="ok">
+		<input style="font-size: 50;top: 88%; left: 37%; background-color: rgb(95, 97, 255);"type="button" value="Вниз" id="down">
+		<input style="font-size: 50;top: 75%; left: 8%; background-color: rgb(95, 97, 255);"type="button" value="Влево" id="left">
+		<input style="font-size: 50;top: 75%; left: 66%; background-color: rgb(95, 97, 255);"type="button" value="Вправо" id="right">
+		<input style="font-size: 80; top: 5%; left: 8%; background-color: rgb(95, 97, 255);" type="button" value="1" id="1">
+		<input style="font-size: 80; top: 5%; left: 37%; background-color: rgb(95, 97, 255);" type="button" value="2" id="2">
+		<input style="font-size: 80; top: 5%; left: 66%; background-color: rgb(95, 97, 255);" type="button" value="3" id="3">
+		<input style="font-size: 80; top: 18%; left: 8%; background-color: rgb(95, 97, 255);" type="button" value="4" id="4">
+		<input style="font-size: 80; top: 18%; left: 37%; background-color: rgb(95, 97, 255);" type="button" value="5" id="5">
+		<input style="font-size: 80; top: 18%; left: 66%; background-color: rgb(95, 97, 255);" type="button" value="6" id="6">
+		<input style="font-size: 80; top: 31%; left: 8%; background-color: rgb(95, 97, 255);" type="button" value="7" id="7">
+		<input style="font-size: 80; top: 31%; left: 37%; background-color: rgb(95, 97, 255);" type="button" value="8" id="8">
+		<input style="font-size: 80; top: 31%; left: 66%; background-color: rgb(95, 97, 255);" type="button" value="9" id="9">
+		<input style="font-size: 40; top: 44%; left: 8%; background-color: rgb(41, 212, 101);" type="button" value="Сброс" id="r">
+		<input style="font-size: 80; top: 44%; left: 37%; background-color: rgb(95, 97, 255);" type="button" value="0" id="0">
+		<input style="font-size: 40; top: 44%; left: 66%; background-color: rgb(41, 212, 101);" type="button" value="Джойстик" id="d">
+		<input style="font-size: 40; top: 62%; left: 66%; background-color: rgb(180, 244, 245);" type="button" value="Инфо" id="I">
+		<input style="font-size: 40; top: 62%; left: 8%; background-color: rgb(180, 244, 245);" type="button" value="Обучение" id="O">
+		<input style="font-size: 40; top: 88%; left: 66%; background-color: rgb(180, 244, 245);" type="button" value="Вопросы" id="V">
+		<input style="font-size: 40; top: 88%; left: 8%; background-color: rgb(180, 244, 245);" type="button" value="Пауза" id="P">
+
+
+		<script>
+			var relayUp = document.getElementById("up");
+			var relayDown = document.getElementById("down");
+			var relayLeft = document.getElementById("left");
+			var relayRight = document.getElementById("right");
+			var relayOk = document.getElementById("ok");
+			var buttonOne = document.getElementById("1");
+			var buttonTwo = document.getElementById("2");
+			var buttonThree = document.getElementById("3");
+			var buttonFour = document.getElementById("4");
+			var buttonFive = document.getElementById("5");
+			var buttonSix = document.getElementById("6");
+			var buttonSeven = document.getElementById("7");
+			var buttonEight = document.getElementById("8");
+			var buttonNine = document.getElementById("9");
+			var buttonZero = document.getElementById("0");
+			var resetButton = document.getElementById("r");
+			var stickButton = document.getElementById("d");
+			var learnButton = document.getElementById("O");
+			var questButton = document.getElementById("V");
+			var controlButton = document.getElementById("I");
+			var pauseButton = document.getElementById("P");
+
+
+			function buttonResetAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/r',false);
+				request.send();
+			}
+			resetButton.addEventListener('click', buttonResetAction);
+
+			function buttonStickAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/d',false);
+				request.send();
+			}
+			stickButton.addEventListener('click', buttonStickAction);
+
+			function buttonLearnAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/O',false);
+				request.send();
+			}
+			learnButton.addEventListener('click', buttonLearnAction);
+
+			function buttonControlAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/I',false);
+				request.send();
+			}
+			controlButton.addEventListener('click', buttonControlAction);
+
+			function buttonPauseAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/P',false);
+				request.send();
+			}
+			pauseButton.addEventListener('click', buttonPauseAction);
+
+			function buttonQuestAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/V',false);
+				request.send();
+			}
+			questButton.addEventListener('click', buttonQuestAction);
+
+			function buttonOneAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/1',false);
+				request.send();
+			}
+			buttonOne.addEventListener('click', buttonOneAction);
+
+			function buttonTwoAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/2',false);
+				request.send();
+			}
+			buttonTwo.addEventListener('click', buttonTwoAction);
+
+			function buttonThreeAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/3',false);
+				request.send();
+			}
+			buttonThree.addEventListener('click', buttonThreeAction);
+
+			function buttonFourAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/4',false);
+				request.send();
+			}
+			buttonFour.addEventListener('click', buttonFourAction);
+
+			function buttonFiveAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/5',false);
+				request.send();
+			}
+			buttonFive.addEventListener('click', buttonFiveAction);
+
+			function buttonSixAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/6',false);
+				request.send();
+			}
+			buttonSix.addEventListener('click', buttonSixAction);
+
+			function buttonSevenAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/7',false);
+				request.send();
+			}
+			buttonSeven.addEventListener('click', buttonSevenAction);
+
+			function buttonEightAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/8',false);
+				request.send();
+			}
+			buttonEight.addEventListener('click', buttonEightAction);
+
+			function buttonNineAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/9',false);
+				request.send();
+			}
+			buttonNine.addEventListener('click', buttonNineAction);
+
+			function buttonZeroAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/0',false);
+				request.send();
+			}
+			buttonZero.addEventListener('click', buttonZeroAction);
+
+
+			function relayUpAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/up',false);
+				request.send();
+			}
+			relayUp.addEventListener('click', relayUpAction);
+
+			function relayDownAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/down',false);
+				request.send();
+			}
+			relayDown.addEventListener('click', relayDownAction);
+
+			function relayLeftAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/left',false);
+				request.send();
+			}
+			relayLeft.addEventListener('click', relayLeftAction);
+
+			function relayRightAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/right',false);
+				request.send();
+			}
+			relayRight.addEventListener('click', relayRightAction);
+
+			function relayOkAction() {
+				var request = new XMLHttpRequest();
+				request.open('GET','/ok',false);
+				request.send();
+			}
+			relayOk.addEventListener('click', relayOkAction);
+
+		</script>
+	</body>
+</html>
